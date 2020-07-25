@@ -36,7 +36,7 @@ ul {
 }
 
 img {
-  display: block;
+  display: inline-block;
 }
 
 .link {
@@ -77,6 +77,8 @@ img {
 /*====== Логотип ======*/
 
 .my-logo-1 {
+  flex-wrap: nowrap;
+  margin-right: 8px;
   font-family: Raleway;
   font-size: 26px;
   line-height: 1.19;
@@ -84,6 +86,7 @@ img {
 }
 
 .my-logo-2 {
+  flex-wrap: nowrap;
   font-family: Raleway;
   font-size: 26px;
   line-height: 1.19;
@@ -91,6 +94,7 @@ img {
 }
 
 .my-logo-3 {
+  flex-wrap: nowrap;
   font-family: Raleway;
   font-size: 26px;
   line-height: 1.19;
@@ -100,6 +104,7 @@ img {
 /*====== Шапка ======*/
 
 .logo {
+  display: flex;
   margin-right: 85px;
   padding-top: 24px;
   padding-bottom: 25px;
@@ -108,6 +113,8 @@ img {
 .iten-studio,
 .iten,
 .iten-portfolio {
+  position: relative;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -120,16 +127,20 @@ img {
   color: #2196f3;
 }
 
-.iten-studio::after {
+.iten-studio::before {
   content: "";
-  display: block;
-  width: 49px;
+  position: absolute;
+  display: inline-block;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 47px;
   height: 4px;
+  transform: translate(-50%);
 
   background-color: #2196f3;
   border-radius: 2px;
-  margin-top: 28px;
-  position: absolute;
 }
 
 .feedback-tel,
@@ -326,10 +337,29 @@ header a {
 }
 
 .lessons-list-link {
+  position: relative;
+  height: 295px;
+}
+
+.lessons-name {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  left: 0;
+  bottom: 0;
+
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+
   font-size: 14px;
   line-height: 1.14;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   font-weight: bold;
+  color: #ffffff;
 }
 
 /*======= Наша команда =======*/
@@ -439,19 +469,6 @@ header a {
 .link-user-logo:hover .logo-clients,
 .link-user-logo:focus .logo-clients {
   fill: #2196f3;
-}
-
-.iten-portfolio::after {
-  content: "";
-  display: block;
-
-  width: 77px;
-  height: 4px;
-
-  background-color: #2196f3;
-  border-radius: 2px;
-  margin-top: 28px;
-  position: absolute;
 }
 
 /*=========== Футер ============*/
@@ -574,14 +591,45 @@ header a {
 
 /*===== Портфолио Меню ======*/
 
-.link-gallery {
-  display: block;
-  outline: none;
-  text-decoration: none;
-}
+/* .portfolio {
+  border-bottom: 1px solid #ececec;
+} */
 
 .portfolio {
-  border-bottom: 1px solid #ececec;
+  position: relative;
+}
+
+.portfolio::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+  background-color: #ececec;
+}
+
+.iten-portfolio {
+  position: relative;
+}
+
+.iten-portfolio::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+
+  width: 77px;
+  height: 4px;
+
+  background-color: #2196f3;
+  border-radius: 2px;
 }
 
 .main-menu {
@@ -632,12 +680,18 @@ header a {
 
 /*========= Галерея =========*/
 
+.link-gallery {
+  display: block;
+}
+
 .examples {
   display: flex;
   flex-wrap: wrap;
 }
 
 .img-project {
+  position: relative;
+  display: block;
   margin-bottom: 20px;
 }
 
@@ -648,8 +702,12 @@ header a {
 }
 
 .link-gallery {
+  position: relative;
   display: block;
   width: 370px;
+
+  outline: none;
+  text-decoration: none;
 
   border: 1px solid #eeeeee;
   box-sizing: border-box;
@@ -662,6 +720,31 @@ header a {
 
 .examples-link:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
+}
+
+.examples-text {
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 0;
+  left: 0;
+
+  width: 370px;
+  height: 294px;
+  padding-top: 63px;
+  padding-right: 24px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+
+  background: rgba(33, 150, 243, 0.9);
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
 }
 
 .examples-text-iten {
