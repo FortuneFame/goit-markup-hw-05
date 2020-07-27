@@ -119,6 +119,8 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-list,
@@ -153,6 +155,8 @@ img {
   font-style: normal;
   text-decoration: none;
   color: #757575;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 header {
@@ -196,6 +200,8 @@ header a {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Иконка хедера */
@@ -203,6 +209,8 @@ header a {
 .address-icon {
   margin-right: 10px;
   fill: #757575;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .addrdess-link:hover .address-icon,
@@ -417,10 +425,14 @@ header a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social {
   fill: #afb1b8;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -456,10 +468,14 @@ header a {
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-clients {
   fill: #afb1b8;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-user-logo:hover,
@@ -652,6 +668,8 @@ header a {
 }
 
 .button-link {
+  display: inline-block;
+
   padding-top: 6px;
   padding-right: 22px;
   padding-bottom: 6px;
@@ -667,6 +685,8 @@ header a {
 
   background: #f5f4fa;
   border-radius: 4px;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-link:hover,
@@ -682,6 +702,7 @@ header a {
 
 .link-gallery {
   display: block;
+  position: relative;
 }
 
 .examples {
@@ -689,21 +710,34 @@ header a {
   flex-wrap: wrap;
 }
 
-.img-project {
-  position: relative;
+.examples-link {
   display: block;
+
+  overflow: hidden;
+
+  width: 370px;
+  height: 404px;
+
+  position: relative;
+}
+
+.img-project {
+  /* position: relative; */
+  display: block;
+
   margin-bottom: 20px;
 }
 
-.link-gallery:hover,
-.link-gallery:focus {
+.examples-link:hover,
+.examples-link:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
 .link-gallery {
+  display: inline-block;
   position: relative;
-  display: block;
+
   width: 370px;
 
   outline: none;
@@ -711,7 +745,6 @@ header a {
 
   border: 1px solid #eeeeee;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .examples-link:not(:nth-child(3n)) {
@@ -724,20 +757,19 @@ header a {
 
 .examples-text {
   position: absolute;
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  /* opacity: 0; */
+  display: inline-block;
   top: 0;
   left: 0;
 
-  width: 370px;
+  width: 368px;
   height: 294px;
   padding-top: 63px;
   padding-right: 24px;
   padding-bottom: 63px;
   padding-left: 24px;
+
+  transform: translateY(100%);
 
   background: rgba(33, 150, 243, 0.9);
   font-weight: normal;
@@ -745,12 +777,21 @@ header a {
   line-height: 1.56;
   letter-spacing: 0.03em;
   color: #ffffff;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.examples-link:hover .examples-text {
+  /* opacity: 1; */
+  transform: translateY(0);
 }
 
 .examples-text-iten {
   margin-bottom: 4px;
   padding-left: 24px;
   padding-right: 24px;
+
+  /* overflow: hidden; */
 
   font-weight: bold;
   font-size: 18px;
@@ -761,15 +802,13 @@ header a {
 .examples-name {
   padding-left: 24px;
   padding-right: 24px;
+  padding-bottom: 20px;
+
+  /* overflow: hidden; */
 
   font-size: 16px;
   line-height: 1.88;
   color: #757575;
-}
-
-.examles-text {
-  font-size: 18px;
-  line-height: 1.56;
 }
 
 /* цвета логотипа #2196F3 / #000000 */
