@@ -804,7 +804,8 @@ header a {
   color: #757575;
 }
 
-.examples-link:hover .examples-text {
+.examples-link:hover .examples-text,
+.examples-link:focus .examples-text {
   /* opacity: 1; */
   transform: translateY(0);
 }
